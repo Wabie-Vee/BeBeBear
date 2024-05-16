@@ -2,3 +2,6 @@
 #macro ROOM_START rm_Start
 #macro VIEW_WIDTH 480
 #macro VIEW_HEIGHT 352
+#macro RESOLUTION_W 480
+#macro RESOLUTION_H 352
+

@@ -6,6 +6,7 @@ function PlayerAnimateSprite(){
 	localFrame += sprite_get_speed(sprite_index) / FRAME_RATE;
 	//show_debug_message(string(_totalFrames));
 	//show_debug_message(string(direction));
+	
 
 
 //if animation would loop on next game step

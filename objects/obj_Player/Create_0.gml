@@ -5,6 +5,10 @@ input_direction = 0;
 spriteIdle = spr_Bebe;
 spriteRun = spr_BebeRun;
 localFrame = 0;
+footStepSound = snd_FootStep;
+footPlayed = false;
+step = false;
+direction = 240;
  
 //Sprinting
 spriteSpeedStart = 6;
