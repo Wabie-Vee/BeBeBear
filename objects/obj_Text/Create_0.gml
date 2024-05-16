@@ -5,7 +5,8 @@ y2 = RESOLUTION_H;
 
 x1Target = 0;
 x2Target = RESOLUTION_W;
-
+voiceTimer = 0
+voice = snd_Speech2
 lerpProgress = 0;
 textProgress = 0;
 
