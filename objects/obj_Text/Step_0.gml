@@ -22,7 +22,11 @@ if (keyboard_check_pressed(vk_space))
 	var _messageLength = string_length(message);
 	if (textProgress >= _messageLength)
 	{
-		instance_destroy();	
+		if instance_exists(obj_TextQueued)
+		{
+			with (obj_TextQueued) ticket --;	
+		}
+		instance_destroy();
 	}
 	else
 	{

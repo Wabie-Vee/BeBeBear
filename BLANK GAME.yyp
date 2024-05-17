@@ -47,6 +47,7 @@
     {"id":{"name":"rm_Start","path":"rooms/rm_Start/rm_Start.yy",},},
     {"id":{"name":"LERP","path":"scripts/LERP/LERP.yy",},},
     {"id":{"name":"MARCROS","path":"scripts/MARCROS/MARCROS.yy",},},
+    {"id":{"name":"NewTextBox","path":"scripts/NewTextBox/NewTextBox.yy",},},
     {"id":{"name":"PlayerAnimateSprite","path":"scripts/PlayerAnimateSprite/PlayerAnimateSprite.yy",},},
     {"id":{"name":"PlayerStates","path":"scripts/PlayerStates/PlayerStates.yy",},},
     {"id":{"name":"ResetText","path":"scripts/ResetText/ResetText.yy",},},
