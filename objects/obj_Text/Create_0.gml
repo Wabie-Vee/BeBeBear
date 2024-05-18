@@ -10,5 +10,4 @@ voice = snd_Speech2
 lerpProgress = 0;
 textProgress = 0;
 
-message = "Default message text";
 background = 0;

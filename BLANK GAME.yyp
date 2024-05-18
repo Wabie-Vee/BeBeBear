@@ -56,6 +56,7 @@
     {"id":{"name":"snd_CameraZoomOut","path":"sounds/snd_CameraZoomOut/snd_CameraZoomOut.yy",},},
     {"id":{"name":"snd_FootStep","path":"sounds/snd_FootStep/snd_FootStep.yy",},},
     {"id":{"name":"snd_Nature","path":"sounds/snd_Nature/snd_Nature.yy",},},
+    {"id":{"name":"snd_Speech","path":"sounds/snd_Speech/snd_Speech.yy",},},
     {"id":{"name":"snd_Speech2","path":"sounds/snd_Speech2/snd_Speech2.yy",},},
     {"id":{"name":"Floor_tileset","path":"sprites/Floor_tileset/Floor_tileset.yy",},},
     {"id":{"name":"spr_Bebe","path":"sprites/spr_Bebe/spr_Bebe.yy",},},

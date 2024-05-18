@@ -35,20 +35,6 @@ if !keyRun
 }
 
 //play footstep sound
-
-//if round(localFrame) = 0 or round(localFrame = 2)
-//{
-//	if sprite_index = spriteRun and footPlayed = false	
-//	{
-//		var _soundPitch = random_range(.75,1.25)
-//		audio_sound_pitch(snd_FootStep, _soundPitch)
-//		audio_play_sound(snd_FootStep, 1, false, 1, 0, _soundPitch);	
-//		audio_sound_pitch(snd_FootStep, 1);
-//		footPlayed = true;
-//	}
-//} else footPlayed = false;
-//show_debug_message(round(localFrame));
-
 if (round(localFrame) = 2 || round(localFrame) = 4)
 {
 	step = false	
@@ -64,7 +50,12 @@ if (round(localFrame) = 1 || round(localFrame) = 3) && step = false && inputMagn
 //animate sprite
 PlayerAnimateSprite()
 if keyboard_check_pressed(ord("C")) playerState = PlayerStateSpeak;
+
+//textbox test
+if keyboard_check_pressed(ord("L")) NewTextBox("Hey there motherfucker!!! How's it going dumb bitch ass motherfucker!!!", snd_Speech);
 }
+
+
 	
 function PlayerStateSpeak(){
 	inputMagnitude = 0
