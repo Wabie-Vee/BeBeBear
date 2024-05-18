@@ -8,9 +8,19 @@ function NewTextBox(_message, _voice){
 		message = _message;
 		if _voice != undefined
 		{
-			voice = _voice;
+			voice = _voice
+		} else {
+			voice = global.voice	
 		}
 		
-		if (instance_exists(other))  originInstance = other.id else originInstance = noone;
+	}
+	
+	with (obj_Player)
+	{
+		if (global.playerState != PlayerStateLocked)
+		{
+			lastState = global.playerState;
+			global.playerState = PlayerStateLocked
+		}
 	}
 }

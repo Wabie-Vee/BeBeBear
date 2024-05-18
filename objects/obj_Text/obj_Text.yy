@@ -10,8 +10,8 @@
   "name":"obj_Text",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"META",
+    "path":"folders/Objects/META.yy",
   },
   "parentObjectId":null,
   "persistent":false,

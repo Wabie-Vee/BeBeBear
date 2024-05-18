@@ -4,4 +4,5 @@
 #macro VIEW_HEIGHT 352
 #macro RESOLUTION_W 480
 #macro RESOLUTION_H 352
+#macro TILE_SIZE 4
 

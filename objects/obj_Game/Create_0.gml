@@ -2,6 +2,7 @@ randomize();
 global.gamePaused = false;
 global.textSpeed = 0.75;
 global.BGM = snd_Nature;
+global.voice = snd_Speech2;
 
 global.iCamera = instance_create_layer(0,0,layer,obj_Camera);
 

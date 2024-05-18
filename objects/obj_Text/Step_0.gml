@@ -25,6 +25,10 @@ if (keyboard_check_pressed(vk_space))
 		if instance_exists(obj_TextQueued)
 		{
 			with (obj_TextQueued) ticket --;	
+		} 
+		else
+		{
+			with obj_Player	global.playerState = lastState
 		}
 		instance_destroy();
 	}

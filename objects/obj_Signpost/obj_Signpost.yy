@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_TextQueued",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_Signpost",
+  "eventList":[],
   "managed":true,
-  "name":"obj_TextQueued",
+  "name":"obj_Signpost",
   "overriddenProperties":[],
   "parent":{
-    "name":"META",
-    "path":"folders/Objects/META.yy",
+    "name":"Entities",
+    "path":"folders/Objects/Entities.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"par_Entity",
+    "path":"objects/par_Entity/par_Entity.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_Sign",
+    "path":"sprites/spr_Sign/spr_Sign.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
