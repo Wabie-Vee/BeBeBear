@@ -9,8 +9,8 @@
   "name":"obj_TextQueued",
   "overriddenProperties":[],
   "parent":{
-    "name":"META",
-    "path":"folders/Objects/META.yy",
+    "name":"Dialogue System",
+    "path":"folders/Objects/META/Dialogue System.yy",
   },
   "parentObjectId":null,
   "persistent":false,

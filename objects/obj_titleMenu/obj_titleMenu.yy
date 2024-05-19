@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Text",
+  "%Name":"obj_titleMenu",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_Text",
+  "name":"obj_titleMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dialogue System",
-    "path":"folders/Objects/META/Dialogue System.yy",
+    "name":"Menu System",
+    "path":"folders/Menu System.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_Menubox",
+    "path":"sprites/spr_Menubox/spr_Menubox.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

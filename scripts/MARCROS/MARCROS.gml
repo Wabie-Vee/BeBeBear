@@ -1,8 +1,9 @@
 #macro FRAME_RATE 60
-#macro ROOM_START rm_Start
+#macro ROOM_START rm_Menu
 #macro VIEW_WIDTH 480
 #macro VIEW_HEIGHT 352
 #macro RESOLUTION_W 480
 #macro RESOLUTION_H 352
 #macro TILE_SIZE 4
+#macro GUI_MULTIPLIER 1
 
