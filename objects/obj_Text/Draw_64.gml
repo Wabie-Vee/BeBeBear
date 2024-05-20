@@ -2,12 +2,14 @@ draw_sprite_stretched(spr_Textbox,background,x1, y1 + y1Target, x2- x1, y2 - y1)
 ResetText(c_black);
 
 var _print = string_copy(message, 1, textProgress);
-var _fontSize = font_get_size(global.fontMain) + 3;
-var _textBoxWidth = x2-x1;
+var _fontSize = font_get_size(global.fontMain) + 7;
+var _textBorder = 16;
+var _textBoxWidth = x2-x1 - 16 - _textBorder;
+
 ResetText(c_black);
-draw_text_ext(x1+ 8, y1+8+y1Target, _print, _fontSize, _RESOLUTION_W - 16);
+draw_text_ext(x1+ _textBorder, y1+_textBorder+y1Target, _print, _fontSize, _textBoxWidth);
 ResetText(c_white);
-draw_text_ext(x1+ 8, y1+7+y1Target, _print, _fontSize, _RESOLUTION_W - 16);
+draw_text_ext(x1+ _textBorder, y1+_textBorder+y1Target - 2, _print, _fontSize, _textBoxWidth);
 
 if portrait != undefined{
 	//animate portrait speaking
