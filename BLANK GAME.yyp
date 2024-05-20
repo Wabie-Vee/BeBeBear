@@ -41,6 +41,7 @@
   },
   "name":"BLANK GAME",
   "resources":[
+    {"id":{"name":"fn_Fancy","path":"fonts/fn_Fancy/fn_Fancy.yy",},},
     {"id":{"name":"fn_Font2","path":"fonts/fn_Font2/fn_Font2.yy",},},
     {"id":{"name":"fn_Wabfont","path":"fonts/fn_Wabfont/fn_Wabfont.yy",},},
     {"id":{"name":"obj_Camera","path":"objects/obj_Camera/obj_Camera.yy",},},
@@ -49,6 +50,7 @@
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
     {"id":{"name":"obj_Signpost","path":"objects/obj_Signpost/obj_Signpost.yy",},},
     {"id":{"name":"obj_Text","path":"objects/obj_Text/obj_Text.yy",},},
+    {"id":{"name":"obj_TextNew","path":"objects/obj_TextNew/obj_TextNew.yy",},},
     {"id":{"name":"obj_TextQueued","path":"objects/obj_TextQueued/obj_TextQueued.yy",},},
     {"id":{"name":"obj_titleMenu","path":"objects/obj_titleMenu/obj_titleMenu.yy",},},
     {"id":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},},
@@ -79,6 +81,7 @@
     {"id":{"name":"spr_BebeRun","path":"sprites/spr_BebeRun/spr_BebeRun.yy",},},
     {"id":{"name":"spr_Col","path":"sprites/spr_Col/spr_Col.yy",},},
     {"id":{"name":"spr_CoolDog","path":"sprites/spr_CoolDog/spr_CoolDog.yy",},},
+    {"id":{"name":"spr_CoolDogPortrait","path":"sprites/spr_CoolDogPortrait/spr_CoolDogPortrait.yy",},},
     {"id":{"name":"spr_Menubox","path":"sprites/spr_Menubox/spr_Menubox.yy",},},
     {"id":{"name":"spr_PlayerShadow","path":"sprites/spr_PlayerShadow/spr_PlayerShadow.yy",},},
     {"id":{"name":"spr_Sign","path":"sprites/spr_Sign/spr_Sign.yy",},},

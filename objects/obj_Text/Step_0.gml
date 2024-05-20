@@ -1,8 +1,8 @@
 lerpProgress += (1 - lerpProgress) / 50;
 textProgress += global.textSpeed;
 
-x1 = lerp(x1, x1Target, lerpProgress);
-x2 = lerp(x2, x2Target, lerpProgress);
+y1Target = lerp(y1Target, 0, lerpProgress);
+//y2 = lerp(y2, y2Target, lerpProgress);
 
 //speech sound
 voiceTimer += global.textSpeed;
@@ -11,6 +11,7 @@ if voiceTimer >= 4 && textProgress < _messageLength && voice != undefined{
 	voiceTimer = 0;
 	if audio_is_playing(voice) {
 		audio_stop_sound(voice)
+		
 	}
 	audio_sound_pitch(voice, random_range(.8, 1));
 	audio_play_sound(voice, 1, false);
