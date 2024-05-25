@@ -41,8 +41,10 @@
   },
   "name":"BLANK GAME",
   "resources":[
+    {"id":{"name":"fn_Big","path":"fonts/fn_Big/fn_Big.yy",},},
     {"id":{"name":"fn_Fancy","path":"fonts/fn_Fancy/fn_Fancy.yy",},},
     {"id":{"name":"fn_Font2","path":"fonts/fn_Font2/fn_Font2.yy",},},
+    {"id":{"name":"fn_Tiny","path":"fonts/fn_Tiny/fn_Tiny.yy",},},
     {"id":{"name":"fn_Wabfont","path":"fonts/fn_Wabfont/fn_Wabfont.yy",},},
     {"id":{"name":"obj_Camera","path":"objects/obj_Camera/obj_Camera.yy",},},
     {"id":{"name":"obj_CoolDog","path":"objects/obj_CoolDog/obj_CoolDog.yy",},},
