@@ -1,4 +1,4 @@
-global.BGM = snd_Room1
+
 width = 64;
 height = 104;
 xTo = (RESOLUTION_W/2);

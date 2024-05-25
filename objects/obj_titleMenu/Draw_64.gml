@@ -1,7 +1,6 @@
-
 draw_set_font(global.fontMain);
 
-//dynamically get width and height of menu
+//dynamically get width and height of menu based on width and height of string
 height = opSpace * 2 + string_height(option[0,0]) + (opLength -1) * opSpace;
 var _newWidth = 0;
 
@@ -10,8 +9,11 @@ for (var i = 0; i < opLength; i++){
 	_newWidth = max(_newWidth, _optionWidth);
 }
 width = _newWidth + opBorder
+
+//draw menu sprite
 draw_sprite_ext(sprite_index, image_index, xTo, yTo, width/sprite_width, height/sprite_height, 0, c_white, 1)
 
+//draw menu text
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 for (var i = 0; i < opLength; i++) {
