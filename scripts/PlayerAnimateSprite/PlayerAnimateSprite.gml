@@ -6,8 +6,6 @@ function PlayerAnimateSprite(){
 	if _totalFrames > 1{
 	localFrame += sprite_get_speed(sprite_index) / FRAME_RATE;
 	}
-	//show_debug_message(string(_totalFrames));
-	//show_debug_message(string(direction));
 	
 
 

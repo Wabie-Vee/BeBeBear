@@ -45,21 +45,17 @@ function DrawTextWithEffects(x, y, text, fontSize, maxWidth) {
             if (char == "/" && j < string_length(word)) {
                 var next_char = string_char_at(word, j + 1);
                 var marker = string_copy(word, j + 1, 2);
-                show_debug_message("Checking marker: " + marker); // Debug message
                 if (ds_map_exists(color_map, marker)) {
                     current_color = ds_map_find_value(color_map, marker);
                     //draw_set_color(current_color); // Immediately set the color
-                    show_debug_message("Color set to: " + string(marker)); // Debug message
                     j += 2; // Skip the next characters as they are part of the marker
                     continue;
                 } else if (next_char == "w") {
                     apply_wave = !apply_wave;
-                    show_debug_message("Wave toggled: " + string(apply_wave)); // Debug message
                     j++; // Skip the next character as it is part of the marker
                     continue;
                 } else if (next_char == "s") {
                     apply_shake = !apply_shake;
-                    show_debug_message("Shake toggled: " + string(apply_shake)); // Debug message
                     j++; // Skip the next character as it is part of the marker
                     continue;
                 }
