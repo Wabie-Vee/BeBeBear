@@ -1,5 +1,5 @@
 function PlayerStateFree() {
-    #region movement and animation
+    #region Movement and Animation
     // Handle player movement
     hSpeed = lengthdir_x(inputMagnitude * moveSpeed, inputDirection);
     vSpeed = lengthdir_y(inputMagnitude * moveSpeed, inputDirection);
@@ -7,7 +7,7 @@ function PlayerStateFree() {
     // Handle player collision
     PlayerCollision();
 
-    // Update sprite index based on movement
+    // Update sprite based on movement
     var _oldSprite = sprite_index;
     if (inputMagnitude != 0) {
         direction = inputDirection;
@@ -23,7 +23,7 @@ function PlayerStateFree() {
     if (keyRun && inputMagnitude != 0) {
         if (!runStart) {
             if (moveSpeed <= speedWalk) {
-                moveSpeed = moveSpeed * runMultiplier;
+                moveSpeed *= runMultiplier;
                 runStart = true;
                 sprite_set_speed(sprite_index, spriteSpeed * runMultiplier, spritespeed_framespersecond);
             }
@@ -50,7 +50,7 @@ function PlayerStateFree() {
     PlayerAnimateSprite();
     #endregion
 
-    #region drawing and interactions
+    #region Drawing and Interactions
     // Draw interaction icon
     var _activateX = lengthdir_x(10, direction);
     var _activateY = lengthdir_y(10, direction);
@@ -63,7 +63,7 @@ function PlayerStateFree() {
     }
     #endregion
     
-    #region interacting with npcs and entities
+    #region Interacting with NPCs and Entities
     // Handle activation key logic
     if (keyActivate) {
         // Calculate activation position
