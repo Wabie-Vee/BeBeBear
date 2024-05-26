@@ -54,7 +54,7 @@ switch (global.cameraState) {
 }
 
 // Debug message for current zoom level
-show_debug_message(global.cameraZoom);
+//show_debug_message(global.cameraZoom);
 
 // Smoothly transition camera properties
 lerpProgress += (1 - lerpProgress) / 50;

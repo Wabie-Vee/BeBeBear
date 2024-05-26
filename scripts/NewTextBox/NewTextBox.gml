@@ -62,10 +62,10 @@ function NewTextBox(_message, _voice, _portrait, _name){
 	
 	with (obj_Player)
 	{
-		if (global.playerState != PlayerStateLocked)
+		if (global.playerState != PlayerStateSpeak())
 		{
 			lastState = global.playerState;
-			global.playerState = PlayerStateLocked
+			global.playerState = PlayerStateSpeak
 		}
 	}
 }
