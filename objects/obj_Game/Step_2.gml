@@ -25,3 +25,5 @@ if global.BGM != undefined
 		audio_play_sound(global.BGM, 1, false);	
 	}
 }
+
+if instance_number(obj_Game) > 1 instance_destroy();
