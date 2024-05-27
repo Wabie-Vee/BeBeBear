@@ -24,7 +24,7 @@ function PlayerStateFree() {
     if (keyRun && inputMagnitude != 0) {
         if (!runStart) {
             if (moveSpeed <= speedWalk) {
-                moveSpeed *= runMultiplier;
+                moveSpeed = speedRun;
                 runStart = true;
                 sprite_set_speed(sprite_index, spriteSpeed * runMultiplier, spritespeed_framespersecond);
             }

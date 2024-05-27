@@ -19,9 +19,10 @@ spriteSpeedStart = 6;
 spriteSpeed = spriteSpeedStart;
 runStart = false;
 
-speedWalk = 2.0;
+speedWalk = 1.5;
 moveSpeed = speedWalk;
-runMultiplier = 1.7;
+runMultiplier = .5;
+speedRun = speedWalk * runMultiplier
 global.playerState = PlayerStateFree;
 
 lastState = global.playerState;
