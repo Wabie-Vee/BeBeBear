@@ -53,7 +53,7 @@ switch (global.cameraState) {
 
 // Smoothly transition camera properties
 lerpProgress += (1 - lerpProgress) / 50;
-global.cameraLerp += (1 - global.cameraLerp) / 50;
+global.cameraLerp += (1 - global.cameraLerp) / 100;
 
 // Update Camera position
 x += (xTo - x) / 15;
