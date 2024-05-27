@@ -21,7 +21,7 @@ runStart = false;
 
 speedWalk = 1.5;
 moveSpeed = speedWalk;
-runMultiplier = .5;
+runMultiplier = 1.5;
 speedRun = speedWalk * runMultiplier
 global.playerState = PlayerStateFree;
 

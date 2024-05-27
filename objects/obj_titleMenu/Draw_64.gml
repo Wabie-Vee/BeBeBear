@@ -10,6 +10,12 @@ for (var i = 0; i < opLength; i++){
 }
 width = _newWidth + opBorder
 
+//draw bebebear title
+var waveRot = Wave(-5,5,4,1);
+var waveY = Wave(-5,5,9,2);
+draw_sprite_ext(spr_MainMenu, image_index, xTo, yTo  - waveY - 128, 1, 1, waveRot, c_white, logoAlpha);
+logoAlpha += .5;
+
 //draw menu sprite
 draw_sprite_ext(sprite_index, image_index, xTo, yTo, width/sprite_width, height/sprite_height, 0, c_white, 1)
 

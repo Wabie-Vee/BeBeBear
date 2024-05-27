@@ -1,7 +1,7 @@
 {
   "$GMNotes":"",
-  "%Name":"general notes1",
-  "name":"general notes1",
+  "%Name":"general notes2",
+  "name":"general notes2",
   "parent":{
     "name":"BLANK GAME",
     "path":"BLANK GAME.yyp",
