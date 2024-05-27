@@ -10,7 +10,7 @@ if drawPointer = true && global.playerState = PlayerStateFree{
 		var _drawX = 0;
 		var _drawY = 0;
 		}
-		draw_sprite(spr_Activate, 0, _activate.x + _drawX, _activate.bbox_top - Wave(0,4,1,0))
+		draw_sprite(spr_Activate, 0, _activate.x, _activate.bbox_top - Wave(0,4,1,0))
 	}
 	
 }

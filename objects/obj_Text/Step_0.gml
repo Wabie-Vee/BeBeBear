@@ -25,7 +25,6 @@ if (keyboard_check_pressed(vk_space)) {
 			global.cameraLerp = 0;
 			global.cameraState = "Free"
 			global.cameraZoom = global.zoomDefault;
-			show_debug_message("Set cameraZoom in obj_Text Step: " + string(global.cameraZoom));
             with obj_Player global.playerState = lastState;
         }
         instance_destroy();

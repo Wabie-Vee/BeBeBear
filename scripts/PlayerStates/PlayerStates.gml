@@ -2,16 +2,13 @@ function PlayerStateFree() {
     #region Movement and Animation
     // Reset transparency
     image_alpha = 1;
-    show_debug_message("PlayerStateFree: Reset transparency");
 
     // Handle player movement
     hSpeed = lengthdir_x(inputMagnitude * moveSpeed, inputDirection);
     vSpeed = lengthdir_y(inputMagnitude * moveSpeed, inputDirection);
-    show_debug_message("PlayerStateFree: Movement calculated");
 
     // Handle player collision
     PlayerCollision();
-    show_debug_message("PlayerStateFree: PlayerCollision executed");
 
     // Update sprite based on movement
     var _oldSprite = sprite_index;
@@ -22,7 +19,6 @@ function PlayerStateFree() {
     if (_oldSprite != sprite_index) {
         localFrame = 0;
     }
-    show_debug_message("PlayerStateFree: Sprite updated");
 
     // Handle running logic
     if (keyRun && inputMagnitude != 0) {
@@ -31,7 +27,6 @@ function PlayerStateFree() {
                 moveSpeed *= runMultiplier;
                 runStart = true;
                 sprite_set_speed(sprite_index, spriteSpeed * runMultiplier, spritespeed_framespersecond);
-                show_debug_message("PlayerStateFree: Running started");
             }
         }
     } else {
@@ -40,7 +35,6 @@ function PlayerStateFree() {
     if (!keyRun) {
         sprite_set_speed(sprite_index, spriteSpeedStart, spritespeed_framespersecond);
         moveSpeed = speedWalk;
-        show_debug_message("PlayerStateFree: Running stopped");
     }
 
     // Play footstep sound based on frame
@@ -49,14 +43,12 @@ function PlayerStateFree() {
     }
     if ((round(localFrame) == 1 || round(localFrame) == 3) && !step && inputMagnitude != 0) {
         step = true;
-        audio_sound_pitch(snd_FootStep, random_range(.5, .9));
-        audio_play_sound(snd_FootStep, 1, false);
-        show_debug_message("PlayerStateFree: Footstep sound played");
+        audio_sound_pitch(footStepSound, random_range(1, .9));
+        audio_play_sound(footStepSound, 1, false);
     }
 
     // Animate the sprite
     PlayerAnimateSprite();
-    show_debug_message("PlayerStateFree: Animation updated");
     #endregion
 
     #region Drawing and Interactions
@@ -70,7 +62,6 @@ function PlayerStateFree() {
     } else {
         drawPointer = true;
     }
-    show_debug_message("PlayerStateFree: Interaction icon updated");
     #endregion
     
     #region Interacting with NPCs and Entities
@@ -83,11 +74,9 @@ function PlayerStateFree() {
 
         if (activate == noone || activate.entityActivateScript == -1) {
             // Potentially handle a roll or other fallback behavior here
-            show_debug_message("PlayerStateFree: No valid entity to activate");
         } else {
             // Execute the activation script
             ScriptExecuteArray(activate.entityActivateScript, activate.entityActivateArgs);
-            show_debug_message("PlayerStateFree: Activation script executed");
 
             // Make an NPC face the player if applicable
             if (activate.entityNPC) {
@@ -98,7 +87,6 @@ function PlayerStateFree() {
                     direction = point_direction(x, y, other.x, other.y);
                 }
                 playerState = PlayerStateSpeak; // Correct state transition
-                show_debug_message("PlayerStateFree: NPC is now facing the player, state set to PlayerStateSpeak");
             }
         }
     }
@@ -110,34 +98,27 @@ function PlayerStateSpeak() {
     inputMagnitude = 0;
     sprite_index = spriteIdle;
     PlayerAnimateSprite();
-    show_debug_message("PlayerStateSpeak: Player animation updated to idle");
 
     // Check if player overlaps with the NPC
     var activate = instance_nearest(x, y, par_Entity); // Use instance_nearest for better accuracy
     if (activate != noone && activate.entityNPC) {
-        show_debug_message("PlayerStateSpeak: Found NPC - " + string(activate));
 
         // Check for overlap
-        if (place_meeting(x, y, activate)) {
-            image_alpha = 0.5; // Set transparency
-            show_debug_message("PlayerStateSpeak: Player is overlapping NPC, set transparency to 0.5");
-        } else {
-            image_alpha = 1; // Reset transparency
-            show_debug_message("PlayerStateSpeak: Player is not overlapping NPC, reset transparency to 1");
-        }
+		if activate.bbox_bottom < bbox_bottom{
+			image_alpha = 0.5	; //set transparency
+		} else {
+			image_alpha = 1;	//reset transparency
+		}
     } else {
         image_alpha = 1; // Reset transparency
-        show_debug_message("PlayerStateSpeak: No NPC found, reset transparency to 1");
     }
 
     // Return to free state when the 'C' key is pressed
     if (keyboard_check_pressed(ord("C"))) {
         playerState = PlayerStateFree;
-        show_debug_message("PlayerStateSpeak: Returned to PlayerStateFree");
     }
 }
 
 function PlayerStateLocked() {
     // Locked state does nothing
-    show_debug_message("PlayerStateLocked: State is locked, no action taken");
 }

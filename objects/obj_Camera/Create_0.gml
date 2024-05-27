@@ -27,4 +27,3 @@ global.cameraState = "Free";
 global.keyCooldown = 0;
 global.keyHandled = false;
 
-show_debug_message("Initialized cameraZoom in obj_Camera Create: " + string(global.cameraZoom));

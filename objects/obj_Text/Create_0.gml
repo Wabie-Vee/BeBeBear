@@ -5,8 +5,8 @@ background = 0;
 
 // Initialize wave and shake variables
 wave_frequency = 10;
-wave_amplitude = 5;
-shake_amplitude = 2;
+wave_amplitude = 3;
+shake_amplitude = 1;
 
 // Initialize other variables
 voiceTimer = 0;

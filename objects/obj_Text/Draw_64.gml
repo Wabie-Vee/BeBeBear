@@ -18,6 +18,7 @@ function DrawTextWithEffects(x, y, text, fontSize, maxWidth) {
     ds_map_add(color_map, "cP", c_purple);
     ds_map_add(color_map, "cW", c_white);
     ds_map_add(color_map, "cK", c_black);
+	ds_map_add(color_map, "cL", c_olive);
 
     var default_color = c_white;
     var current_color = default_color;
