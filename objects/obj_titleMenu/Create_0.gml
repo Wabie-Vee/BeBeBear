@@ -1,8 +1,8 @@
-
+logoAlpha = 0;
 width = 64;
 height = 104;
 xTo = (RESOLUTION_W/2);
-yTo = (RESOLUTION_H/2);
+yTo = (RESOLUTION_H/3*2);
 pos = 0;
 opBorder = 8;
 opSpace = 16;

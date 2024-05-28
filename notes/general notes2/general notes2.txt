@@ -1,0 +1,7 @@
+Minigame ideas:
+Green bar slider thingy.
+sneaky stealth game.
+
+General notes:
+instead of animating things, fade to black.
+notebook maybe???

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_BebeRun",
-    "path":"sprites/spr_BebeRun/spr_BebeRun.yy",
+    "name":"spr_BebeIdle",
+    "path":"sprites/spr_BebeIdle/spr_BebeIdle.yy",
   },
   "spriteMaskId":{
     "name":"spr_BebeRun",

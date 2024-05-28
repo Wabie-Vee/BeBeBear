@@ -9,6 +9,7 @@
     {"name":"inst_7C275587","path":"rooms/rm_Start/rm_Start.yy",},
     {"name":"inst_4CBA8F49","path":"rooms/rm_Start/rm_Start.yy",},
     {"name":"inst_3D67A447","path":"rooms/rm_Start/rm_Start.yy",},
+    {"name":"inst_206FD5A5","path":"rooms/rm_Start/rm_Start.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -22,8 +23,9 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},"propertyId":{"name":"entityActivateArgs","path":"objects/par_Entity/par_Entity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[\"/cLHey there motherfucker!!\"]",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":248.0,"y":155.0,},
         {"$GMRInstance":"","%Name":"inst_3D67A447","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3D67A447","objectId":{"name":"obj_CoolDog","path":"objects/obj_CoolDog/obj_CoolDog.yy",},"properties":[
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},"propertyId":{"name":"entityActivateArgs","path":"objects/par_Entity/par_Entity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[\"Hello there /cOMOTHERFUCKER/cW , /w/cBWave Out!!!/w/cY /sSHAKE OUT/s/cW . Okay I'm done /shere.../s\", snd_Speech3, spr_DogPortrait, \"Cool Dog\"]",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},"propertyId":{"name":"entityActivateArgs","path":"objects/par_Entity/par_Entity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[\"Hello there /cRMOTHERFUCKER/cW , /w/cBWave Out!!!/w/cY /sSHAKE OUT/s/cW . Okay I'm done here...\", snd_Speech3, spr_CoolDogPortrait, \"Cool Dog\"]",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":213.0,"y":85.0,},
+        {"$GMRInstance":"","%Name":"inst_206FD5A5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_206FD5A5","objectId":{"name":"obj_Catty","path":"objects/obj_Catty/obj_Catty.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":155.0,"y":217.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Col","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Col","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":88,"SerialiseWidth":120,"TileCompressedData":[
           -101,-2147483648,1,1,-119,-2147483648,1,1,-119,-2147483648,1,1,-119,-2147483648,1,1,-119,-2147483648,
