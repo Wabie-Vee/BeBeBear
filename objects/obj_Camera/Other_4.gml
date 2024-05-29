@@ -1,5 +1,14 @@
 if instance_exists(global.follow){
-	x = global.follow.x;
-	y = global.follow.y - global.follow.sprite_height/2;
+	if global.targetX != -1{
+		x = global.targetX;
+	} else {
+		x = global.follow.x	
+	}
+	
+	if global.targetY != -1{
+	y = global.targetY - global.follow.sprite_height/2;
+	} else {
+		y = global.follow.y - global.follow.sprite_height/2;	
+	}
 	
 }

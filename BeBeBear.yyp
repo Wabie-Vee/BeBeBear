@@ -37,7 +37,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"BeBeBear",
   "resources":[
@@ -58,6 +58,7 @@
     {"id":{"name":"obj_TextNew","path":"objects/obj_TextNew/obj_TextNew.yy",},},
     {"id":{"name":"obj_TextQueued","path":"objects/obj_TextQueued/obj_TextQueued.yy",},},
     {"id":{"name":"obj_titleMenu","path":"objects/obj_titleMenu/obj_titleMenu.yy",},},
+    {"id":{"name":"obj_Transition","path":"objects/obj_Transition/obj_Transition.yy",},},
     {"id":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},},
     {"id":{"name":"rm_Menu","path":"rooms/rm_Menu/rm_Menu.yy",},},
     {"id":{"name":"rm_Parent","path":"rooms/rm_Parent/rm_Parent.yy",},},

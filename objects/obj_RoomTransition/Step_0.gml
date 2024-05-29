@@ -1,4 +1,5 @@
 // Define the functions at the top of the Step event
+/*
 function HandleFadeOut(_transitionTime) {
     fade_alpha += _transitionTime;
     if (fade_alpha >= 1) {

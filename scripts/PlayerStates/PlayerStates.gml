@@ -90,6 +90,29 @@ function PlayerStateFree() {
             }
         }
     }
+	
+	// Check for collision with obj_RoomTransition
+	if (place_meeting(x, y, obj_RoomTransition)) {
+	    var transitionObj = instance_place(x, y, obj_RoomTransition);
+	    if (transitionObj.useFadeTransition) {
+	        // Spawn a new obj_Transition
+	        var newTransition = instance_create_layer(x, y, "Instances", obj_Transition);
+	        newTransition.targetRoom = transitionObj.targetRoom;
+	        newTransition.targetX = transitionObj.targetX;
+	        newTransition.targetY = transitionObj.targetY;
+			if transitionObj.targetX != -1 global.targetX = transitionObj.targetX else global.targetX = x
+	        if transitionObj.targetY != -1 global.targetY = transitionObj.targetY else global.targetY = y
+	        newTransition.useFadeTransition = transitionObj.useFadeTransition;
+
+	        // Lock the player
+	        global.playerState = PlayerStateLocked;
+	    } else {
+	        // Direct room transition without fade
+			if transitionObj.targetX != -1 global.targetX = transitionObj.targetX else global.targetX = x
+	        if transitionObj.targetY != -1 global.targetY = transitionObj.targetY else global.targetY = y
+	        room_goto(transitionObj.targetRoom);
+	    }
+	}
     #endregion
 }
 
