@@ -6,6 +6,7 @@ vSpeed = 0;
 input_direction = 0;
 spriteIdle = spr_BebeIdle;
 spriteRun = spr_BebeWalk;
+spriteAFK = spr_BebeAFK1;
 localFrame = 0;
 footStepSound = snd_FootStep2;
 footPlayed = false;
@@ -25,6 +26,11 @@ runMultiplier = 1.5;
 speedRun = speedWalk * runMultiplier
 
 lastState = global.playerState;
+
+//afk gang
+playerAFK = false;
+afkCounter = 0;
+afkLimit = 5*FRAME_RATE;
 
 
 

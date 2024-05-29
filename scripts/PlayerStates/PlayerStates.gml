@@ -12,7 +12,11 @@ function PlayerStateFree() {
 
     // Update sprite based on movement
     var _oldSprite = sprite_index;
-    sprite_index = (inputMagnitude != 0) ? spriteRun : spriteIdle;
+	if !playerAFK{
+		sprite_index = (inputMagnitude != 0) ? spriteRun : spriteIdle;
+	} else {
+		sprite_index = spriteAFK	
+	}
     if (inputMagnitude != 0) {
         direction = inputDirection;
     }
@@ -47,6 +51,21 @@ function PlayerStateFree() {
         audio_play_sound(footStepSound, 1, false);
     }
 
+
+	//AFK check
+	afkCounter ++;
+	if afkCounter > afkLimit{
+		playerAFK = true;
+	} else {
+		playerAFK = false;	
+	}
+	
+	if inputMagnitude = 0{
+		afkCounter ++;
+	} else {
+		afkCounter = 0;
+	}
+	
     // Animate the sprite
     PlayerAnimateSprite();
     #endregion
@@ -94,6 +113,9 @@ function PlayerStateFree() {
 	// Check for collision with obj_RoomTransition
 	if (place_meeting(x, y, obj_RoomTransition)) {
 	    var transitionObj = instance_place(x, y, obj_RoomTransition);
+		if (transitionObj.playSound != noone){
+			audio_play_sound(transitionObj.playSound, 1, false);
+		}
 	    if (transitionObj.useFadeTransition) {
 	        // Spawn a new obj_Transition
 	        var newTransition = instance_create_layer(x, y, "Instances", obj_Transition);
