@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"BLANK GAME",
+  "%Name":"BeBeBear",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -39,7 +39,7 @@
   "MetaData":{
     "IDEVersion":"2024.4.1.152",
   },
-  "name":"BLANK GAME",
+  "name":"BeBeBear",
   "resources":[
     {"id":{"name":"fn_Big","path":"fonts/fn_Big/fn_Big.yy",},},
     {"id":{"name":"fn_Fancy","path":"fonts/fn_Fancy/fn_Fancy.yy",},},
@@ -61,8 +61,8 @@
     {"id":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},},
     {"id":{"name":"rm_Menu","path":"rooms/rm_Menu/rm_Menu.yy",},},
     {"id":{"name":"rm_Parent","path":"rooms/rm_Parent/rm_Parent.yy",},},
-    {"id":{"name":"rm_Start_1","path":"rooms/rm_Start_1/rm_Start_1.yy",},},
     {"id":{"name":"rm_Start","path":"rooms/rm_Start/rm_Start.yy",},},
+    {"id":{"name":"rm_Test","path":"rooms/rm_Test/rm_Test.yy",},},
     {"id":{"name":"DrawTextFX","path":"scripts/DrawTextFX/DrawTextFX.yy",},},
     {"id":{"name":"LERP","path":"scripts/LERP/LERP.yy",},},
     {"id":{"name":"MARCROS","path":"scripts/MARCROS/MARCROS.yy",},},
@@ -115,7 +115,7 @@
     {"roomId":{"name":"rm_Parent","path":"rooms/rm_Parent/rm_Parent.yy",},},
     {"roomId":{"name":"rm_Start","path":"rooms/rm_Start/rm_Start.yy",},},
     {"roomId":{"name":"rm_Menu","path":"rooms/rm_Menu/rm_Menu.yy",},},
-    {"roomId":{"name":"rm_Start_1","path":"rooms/rm_Start_1/rm_Start_1.yy",},},
+    {"roomId":{"name":"rm_Test","path":"rooms/rm_Test/rm_Test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

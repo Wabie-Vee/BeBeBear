@@ -1,7 +1,7 @@
 {
   "$GMRoom":"",
   "%Name":"rm_Start",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_Parent/RoomCreationCode.gml",
   "inheritCode":true,
   "inheritCreationOrder":true,
   "inheritLayers":false,
@@ -29,10 +29,9 @@
         {"$GMRInstance":"","%Name":"inst_206FD5A5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_206FD5A5","objectId":{"name":"obj_Catty","path":"objects/obj_Catty/obj_Catty.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":155.0,"y":217.0,},
         {"$GMRInstance":"","%Name":"inst_70D05A8B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_70D05A8B","objectId":{"name":"obj_RoomTransition","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_RoomTransition","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"propertyId":{"name":"useFadeTransition","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_RoomTransition","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"propertyId":{"name":"targetX","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"120",},
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_RoomTransition","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"propertyId":{"name":"targetY","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"120",},
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_RoomTransition","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"propertyId":{"name":"targetRoom","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"resource":{"name":"rm_Start_1","path":"rooms/rm_Start_1/rm_Start_1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_Start_1",},
-          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.40625,"scaleY":10.96875,"x":467.0,"y":0.0,},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_RoomTransition","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"propertyId":{"name":"targetX","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"16",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_RoomTransition","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"propertyId":{"name":"targetRoom","path":"objects/obj_RoomTransition/obj_RoomTransition.yy",},"resource":{"name":"rm_Test","path":"rooms/rm_Test/rm_Test.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_Test",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.40625,"scaleY":10.96875,"x":480.0,"y":-4.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Col","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Col","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":88,"SerialiseWidth":120,"TileCompressedData":[
           -101,-2147483648,1,1,-119,-2147483648,1,1,-119,-2147483648,1,1,-119,-2147483648,1,1,-119,-2147483648,

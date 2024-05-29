@@ -23,13 +23,8 @@ speedWalk = 1.5;
 moveSpeed = speedWalk;
 runMultiplier = 1.5;
 speedRun = speedWalk * runMultiplier
-global.playerState = PlayerStateFree;
 
 lastState = global.playerState;
 
-//place to put player when room is started
-if global.targetX != -1 {
-		x = global.targetX;
-		y = global.targetY;
-}
+
 
