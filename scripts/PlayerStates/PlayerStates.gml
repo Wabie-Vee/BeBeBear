@@ -50,11 +50,20 @@ function PlayerStateFree() {
         audio_sound_pitch(footStepSound, random_range(1, .9));
         audio_play_sound(footStepSound, 1, false);
     }
-
+	
+	//force sleep
+	if keyboard_check_pressed(ord("Z")){
+		afkCounter = afkLimit + 1;	
+	}
 
 	//AFK check
 	afkCounter ++;
 	if afkCounter > afkLimit{
+		if playerAFK = false{
+			audio_sound_pitch(snd_Yawn, 1.7)
+			audio_play_sound(snd_Yawn, 1, false);	
+		}
+		
 		playerAFK = true;
 	} else {
 		playerAFK = false;	

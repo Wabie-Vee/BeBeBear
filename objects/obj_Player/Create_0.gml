@@ -30,7 +30,7 @@ lastState = global.playerState;
 //afk gang
 playerAFK = false;
 afkCounter = 0;
-afkLimit = 5*FRAME_RATE;
+afkLimit = 15*FRAME_RATE;
 
 
 

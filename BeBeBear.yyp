@@ -87,6 +87,7 @@
     {"id":{"name":"snd_Speech","path":"sounds/snd_Speech/snd_Speech.yy",},},
     {"id":{"name":"snd_Speech2","path":"sounds/snd_Speech2/snd_Speech2.yy",},},
     {"id":{"name":"snd_Speech3","path":"sounds/snd_Speech3/snd_Speech3.yy",},},
+    {"id":{"name":"snd_Yawn","path":"sounds/snd_Yawn/snd_Yawn.yy",},},
     {"id":{"name":"Floor_tileset","path":"sprites/Floor_tileset/Floor_tileset.yy",},},
     {"id":{"name":"spr_Activate","path":"sprites/spr_Activate/spr_Activate.yy",},},
     {"id":{"name":"spr_Bebe","path":"sprites/spr_Bebe/spr_Bebe.yy",},},
