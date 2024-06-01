@@ -3,6 +3,10 @@ Green bar slider thingy.
 sneaky stealth game.
 Catching things minigame
 
+
 General notes:
 instead of animating things, fade to black.
 notebook maybe???
+Bzzt shaky text effect
+tree pixel art/ dithering
+fear of stuff creeping in yuh
