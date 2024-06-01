@@ -121,7 +121,8 @@ if (portrait != undefined) {
     }
 
     draw_sprite_stretched(spr_Textbox, background, px1, py1 + y1Target, px2 - px1, py2 - py1);
-    draw_sprite(portrait, portraitFrame, 48, 270 + y1Target);
+	var _portraitScale = 1.25
+    draw_sprite_ext(portrait, portraitFrame, 48, 270 + y1Target, 1.25, 1.25, 0, c_white, 1);
 
     if (nameTag != undefined) {
         draw_set_valign(fa_middle);
