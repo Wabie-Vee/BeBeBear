@@ -1,10 +1,24 @@
 // Drawing the text box
 draw_sprite_stretched(spr_Textbox, background, x1, y1 + y1Target, x2 - x1, y2 - y1);
-
+var _print = string_copy(message, 1, textProgress);
 // Function to reset text color
 function ResetText(color) {
     draw_set_color(color);
     draw_set_font(global.fontMain);
+}
+
+if (responses[0] != -1) && (textProgress >= string_length(message)){
+	for (var i = 0; i < array_length(responses); i++){
+		_print += "\n"
+		if (i == responseSelected){
+			_print += " <";	
+		}
+		_print += responses[i];
+		
+		if (i == responseSelected){
+		_print += "> ";	
+		}
+	}
 }
 
 // Function to draw the text with effects
@@ -89,7 +103,6 @@ function DrawTextWithEffects(x, y, text, fontSize, maxWidth) {
 }
 
 // Drawing the text with effects
-var _print = string_copy(message, 1, textProgress);
 var _fontSize = font_get_size(global.fontMain) + 7;
 var _textBorder = 16;
 var _textBoxWidth = x2 - x1 - 16 - _textBorder;

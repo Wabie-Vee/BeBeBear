@@ -3,6 +3,17 @@ textProgress += global.textSpeed;
 
 y1Target = lerp(y1Target, 0, lerpProgress);
 
+//cycle through responses
+keyUp = keyboard_check_pressed(vk_up);
+keyDown = keyboard_check_pressed(vk_down);
+
+responseSelected += (keyDown - keyUp);
+
+var _max = array_length(responses) - 1;
+var _min = 0;
+if (responseSelected > _max) responseSelected = _min;
+if (responseSelected < _min) responseSelected = _max;
+
 // Speech sound
 voiceTimer += global.textSpeed;
 var _messageLength = string_length(message);

@@ -37,7 +37,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"BeBeBear",
   "resources":[
@@ -73,6 +73,7 @@
     {"id":{"name":"PlayerCollision","path":"scripts/PlayerCollision/PlayerCollision.yy",},},
     {"id":{"name":"PlayerStates","path":"scripts/PlayerStates/PlayerStates.yy",},},
     {"id":{"name":"ResetText","path":"scripts/ResetText/ResetText.yy",},},
+    {"id":{"name":"Script13","path":"scripts/Script13/Script13.yy",},},
     {"id":{"name":"ScriptExecuteArray","path":"scripts/ScriptExecuteArray/ScriptExecuteArray.yy",},},
     {"id":{"name":"ScriptText","path":"scripts/ScriptText/ScriptText.yy",},},
     {"id":{"name":"Wave","path":"scripts/Wave/Wave.yy",},},
