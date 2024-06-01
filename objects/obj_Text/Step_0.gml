@@ -1,13 +1,16 @@
 lerpProgress += (1 - lerpProgress) / 50;
 textProgress += global.textSpeed;
-
+var _messageLength = string_length(message);
 y1Target = lerp(y1Target, 0, lerpProgress);
 
 //cycle through responses
-keyUp = keyboard_check_pressed(vk_up);
-keyDown = keyboard_check_pressed(vk_down);
+keyUp = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W"));
+keyDown = keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord("S"));
 
-responseSelected += (keyDown - keyUp);
+if textProgress >= _messageLength{
+	responseSelected += (keyDown - keyUp);
+	if keyDown or keyUp audio_play_sound(snd_Select, 1, false);
+}
 
 var _max = array_length(responses) - 1;
 var _min = 0;
@@ -16,7 +19,6 @@ if (responseSelected < _min) responseSelected = _max;
 
 // Speech sound
 voiceTimer += global.textSpeed;
-var _messageLength = string_length(message);
 if (voiceTimer >= 4 && textProgress < _messageLength && voice != undefined) {
     voiceTimer = 0;
     if (audio_is_playing(voice)) {
@@ -28,7 +30,6 @@ if (voiceTimer >= 4 && textProgress < _messageLength && voice != undefined) {
 
 // Kill textbox
 if (keyboard_check_pressed(vk_space)) {
-    var _messageLength = string_length(message);
     if (textProgress >= _messageLength) {
 		
 		if (responses[0] != -1){
