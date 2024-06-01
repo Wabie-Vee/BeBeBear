@@ -1,10 +1,22 @@
-function NewTextBox(_message, _dialogueResponses, _voice, _portrait, _name) {
+function NewTextBox(_message, _character, _dialogueResponses) {
     var _obj;
     if (instance_exists(obj_Text)) {
         _obj = obj_TextQueued;
     } else {
         _obj = obj_Text;
     }
+	
+    // Extract character details from the struct
+	if _character != undefined{
+	    var _voice = _character.voice;
+	    var _portrait = _character.portrait;
+	    var _name = _character.name;
+	} else {
+		_voice = undefined
+		_portrait = undefined
+		_name = undefined
+	}
+	
     with (instance_create_layer(0, 0, "Instances", _obj)) {
         message = _message;
         if (instance_exists(other)) {

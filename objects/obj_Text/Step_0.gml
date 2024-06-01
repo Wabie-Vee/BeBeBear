@@ -43,7 +43,6 @@ if (keyboard_check_pressed(vk_space)) {
 			global.cameraZoom = global.zoomDefault;
             with obj_Player global.playerState = lastState;
         }
-        instance_destroy();
     } else {
         if (textProgress > 4) {
             textProgress = _messageLength;

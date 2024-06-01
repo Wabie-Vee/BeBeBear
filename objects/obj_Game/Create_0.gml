@@ -1,4 +1,5 @@
 randomize();
+InitNPCs();
 global.gamePaused = false;
 global.textSpeed = 0.75;
 global.BGM = snd_HereComesBebe;

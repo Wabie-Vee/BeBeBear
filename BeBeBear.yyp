@@ -66,6 +66,7 @@
     {"id":{"name":"rm_Test","path":"rooms/rm_Test/rm_Test.yy",},},
     {"id":{"name":"DialogueResponses","path":"scripts/DialogueResponses/DialogueResponses.yy",},},
     {"id":{"name":"DrawTextFX","path":"scripts/DrawTextFX/DrawTextFX.yy",},},
+    {"id":{"name":"InitNPCs","path":"scripts/InitNPCs/InitNPCs.yy",},},
     {"id":{"name":"LERP","path":"scripts/LERP/LERP.yy",},},
     {"id":{"name":"MARCROS","path":"scripts/MARCROS/MARCROS.yy",},},
     {"id":{"name":"NewTextBox","path":"scripts/NewTextBox/NewTextBox.yy",},},

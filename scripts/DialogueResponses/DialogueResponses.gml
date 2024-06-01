@@ -7,7 +7,7 @@ function DialogueResponses(_responses){
 		
 		case 1: NewTextBox("You gave response A!"); break;
 		
-		case 2: NewTextBox("You gave response B! Any further response?", ["3:Yes!", "0:No."]); break;
+		case 2: NewTextBox("You gave response B! Any further response?",,["3:Yes!", "0:No."]); break;
 		
 		case 3: NewTextBox("/s/cRFUCK YOU..."); break;
 		
