@@ -12,6 +12,8 @@ global.fullScreen = false;
 global.playerState = PlayerStateFree;
 
 
+
+
 //player start targets
 global.targetX = -1;
 global.targetY = -1;

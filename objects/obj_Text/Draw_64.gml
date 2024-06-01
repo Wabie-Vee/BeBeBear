@@ -173,7 +173,7 @@ function DrawResponsesWithEffects(x, y, responses, selectedIndex, fontSize) {
 if (responses[0] != -1 && textProgress >= string_length(message)) {
     var response_y = y1 + _textBorder + 8 + y1Target + _fontSize * 2; // Adjust vertical position as needed
 	draw_set_halign(fa_right);
-    DrawResponsesWithEffects(x2 - _textBorder, response_y, responses, responseSelected, _fontSize);
+    DrawResponsesWithEffects(x1 + _textBorder + 6, response_y, responses, responseSelected, _fontSize);
 }
 
 // Drawing the portrait and name box if they exist
