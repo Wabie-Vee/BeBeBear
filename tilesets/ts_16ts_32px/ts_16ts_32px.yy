@@ -20,8 +20,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"s_16ts_32px",
-    "path":"sprites/s_16ts_32px/s_16ts_32px.yy",
+    "name":"spr_TileSet",
+    "path":"sprites/spr_TileSet/spr_TileSet.yy",
   },
   "spriteNoExport":true,
   "textureGroupId":{
