@@ -50,7 +50,7 @@ function PlayerStateFree() {
         audio_sound_pitch(footStepSound, random_range(1, 0.9));
         audio_play_sound(footStepSound, 1, false);
     }
-    
+
     // Force sleep
     if (keyboard_check_pressed(ord("Z"))) {
         afkCounter = afkLimit + 1;
@@ -63,18 +63,18 @@ function PlayerStateFree() {
             audio_sound_pitch(snd_Yawn, 1.7);
             audio_play_sound(snd_Yawn, 1, false);
         }
-        
+
         playerAFK = true;
     } else {
         playerAFK = false;
     }
-    
+
     if (inputMagnitude == 0) {
         afkCounter++;
     } else {
         afkCounter = 0;
     }
-    
+
     // Animate the sprite
     PlayerAnimateSprite();
     #endregion
@@ -98,37 +98,21 @@ function PlayerStateFree() {
     }
     ds_list_destroy(instanceList);
 
-    if (activate == noone || activate.entityActivateScript == -1) {
-        drawPointer = false;
-    } else {
+    if (activate != noone && activate.entityActivateScript != -1) {
         drawPointer = true;
+        show_debug_message("Pointer Active: " + string(activate));
+    } else {
+        drawPointer = false;
+        show_debug_message("Pointer Inactive");
     }
     #endregion
-    
+
     #region Interacting with NPCs and Entities
     // Handle activation key logic
     if (keyActivate) {
-        // Calculate activation position
-        var _activateX = lengthdir_x(10, direction);
-        var _activateY = lengthdir_y(15, direction);
-        activate = noone;
+        if (activate != noone && activate.entityActivateScript != -1) {
+            show_debug_message("Interacting with: " + string(activate));
 
-        // Check for entities within the area and at the bottom of their sprites
-        var instanceList = ds_list_create();
-        instance_place_list(x + _activateX, y + _activateY, par_Entity, instanceList, false);
-        for (var i = 0; i < ds_list_size(instanceList); i++) {
-            var inst = ds_list_find_value(instanceList, i);
-            var instBottomY = inst.bbox_bottom;
-            if (point_in_circle(inst.x, instBottomY, x + _activateX, y + _activateY, 64)) {
-                activate = inst;
-                break;
-            }
-        }
-        ds_list_destroy(instanceList);
-
-        if (activate == noone || activate.entityActivateScript == -1) {
-            // Potentially handle a roll or other fallback behavior here
-        } else {
             // Execute the activation script
             ScriptExecuteArray(activate.entityActivateScript, activate.entityActivateArgs);
 
@@ -142,9 +126,11 @@ function PlayerStateFree() {
                 }
                 playerState = PlayerStateSpeak; // Correct state transition
             }
+        } else {
+            show_debug_message("No entity to interact with");
         }
     }
-    
+
     // Check for collision with obj_RoomTransition
     if (place_meeting(x, y, obj_RoomTransition)) {
         var transitionObj = instance_place(x, y, obj_RoomTransition);
@@ -185,11 +171,11 @@ function PlayerStateSpeak() {
     if (activate != noone && activate.entityNPC) {
 
         // Check for overlap
-		if activate.bbox_bottom < bbox_bottom{
-			image_alpha = 0.5	; //set transparency
-		} else {
-			image_alpha = 1;	//reset transparency
-		}
+        if (activate.bbox_bottom < bbox_bottom) {
+            image_alpha = 0.5; // set transparency
+        } else {
+            image_alpha = 1; // reset transparency
+        }
     } else {
         image_alpha = 1; // Reset transparency
     }
