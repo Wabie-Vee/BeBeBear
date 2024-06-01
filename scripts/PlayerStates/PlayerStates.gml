@@ -12,11 +12,11 @@ function PlayerStateFree() {
 
     // Update sprite based on movement
     var _oldSprite = sprite_index;
-	if !playerAFK{
-		sprite_index = (inputMagnitude != 0) ? spriteRun : spriteIdle;
-	} else {
-		sprite_index = spriteAFK	
-	}
+    if (!playerAFK) {
+        sprite_index = (inputMagnitude != 0) ? spriteRun : spriteIdle;
+    } else {
+        sprite_index = spriteAFK;
+    }
     if (inputMagnitude != 0) {
         direction = inputDirection;
     }
@@ -47,34 +47,34 @@ function PlayerStateFree() {
     }
     if ((round(localFrame) == 1 || round(localFrame) == 3) && !step && inputMagnitude != 0) {
         step = true;
-        audio_sound_pitch(footStepSound, random_range(1, .9));
+        audio_sound_pitch(footStepSound, random_range(1, 0.9));
         audio_play_sound(footStepSound, 1, false);
     }
-	
-	//force sleep
-	if keyboard_check_pressed(ord("Z")){
-		afkCounter = afkLimit + 1;	
-	}
+    
+    // Force sleep
+    if (keyboard_check_pressed(ord("Z"))) {
+        afkCounter = afkLimit + 1;
+    }
 
-	//AFK check
-	afkCounter ++;
-	if afkCounter > afkLimit{
-		if playerAFK = false{
-			audio_sound_pitch(snd_Yawn, 1.7)
-			audio_play_sound(snd_Yawn, 1, false);	
-		}
-		
-		playerAFK = true;
-	} else {
-		playerAFK = false;	
-	}
-	
-	if inputMagnitude = 0{
-		afkCounter ++;
-	} else {
-		afkCounter = 0;
-	}
-	
+    // AFK check
+    afkCounter++;
+    if (afkCounter > afkLimit) {
+        if (!playerAFK) {
+            audio_sound_pitch(snd_Yawn, 1.7);
+            audio_play_sound(snd_Yawn, 1, false);
+        }
+        
+        playerAFK = true;
+    } else {
+        playerAFK = false;
+    }
+    
+    if (inputMagnitude == 0) {
+        afkCounter++;
+    } else {
+        afkCounter = 0;
+    }
+    
     // Animate the sprite
     PlayerAnimateSprite();
     #endregion
@@ -83,7 +83,20 @@ function PlayerStateFree() {
     // Draw interaction icon
     var _activateX = lengthdir_x(10, direction);
     var _activateY = lengthdir_y(10, direction);
-    activate = instance_position(x + _activateX, y + _activateY, par_Entity);
+    activate = noone;
+
+    // Check for entities within the area and at the bottom of their sprites
+    var instanceList = ds_list_create();
+    instance_place_list(x + _activateX, y + _activateY, par_Entity, instanceList, false);
+    for (var i = 0; i < ds_list_size(instanceList); i++) {
+        var inst = ds_list_find_value(instanceList, i);
+        var instBottomY = inst.bbox_bottom;
+        if (point_in_circle(inst.x, instBottomY, x + _activateX, y + _activateY, 16)) {
+            activate = inst;
+            break;
+        }
+    }
+    ds_list_destroy(instanceList);
 
     if (activate == noone || activate.entityActivateScript == -1) {
         drawPointer = false;
@@ -97,8 +110,21 @@ function PlayerStateFree() {
     if (keyActivate) {
         // Calculate activation position
         var _activateX = lengthdir_x(10, direction);
-        var _activateY = lengthdir_y(10, direction);
-        var activate = instance_position(x + _activateX, y + _activateY, par_Entity);
+        var _activateY = lengthdir_y(15, direction);
+        activate = noone;
+
+        // Check for entities within the area and at the bottom of their sprites
+        var instanceList = ds_list_create();
+        instance_place_list(x + _activateX, y + _activateY, par_Entity, instanceList, false);
+        for (var i = 0; i < ds_list_size(instanceList); i++) {
+            var inst = ds_list_find_value(instanceList, i);
+            var instBottomY = inst.bbox_bottom;
+            if (point_in_circle(inst.x, instBottomY, x + _activateX, y + _activateY, 64)) {
+                activate = inst;
+                break;
+            }
+        }
+        ds_list_destroy(instanceList);
 
         if (activate == noone || activate.entityActivateScript == -1) {
             // Potentially handle a roll or other fallback behavior here
@@ -118,34 +144,35 @@ function PlayerStateFree() {
             }
         }
     }
-	
-	// Check for collision with obj_RoomTransition
-	if (place_meeting(x, y, obj_RoomTransition)) {
-	    var transitionObj = instance_place(x, y, obj_RoomTransition);
-		if (transitionObj.playSound != noone){
-			audio_play_sound(transitionObj.playSound, 1, false);
-		}
-	    if (transitionObj.useFadeTransition) {
-	        // Spawn a new obj_Transition
-	        var newTransition = instance_create_layer(x, y, "Instances", obj_Transition);
-	        newTransition.targetRoom = transitionObj.targetRoom;
-	        newTransition.targetX = transitionObj.targetX;
-	        newTransition.targetY = transitionObj.targetY;
-			if transitionObj.targetX != -1 global.targetX = transitionObj.targetX else global.targetX = x
-	        if transitionObj.targetY != -1 global.targetY = transitionObj.targetY else global.targetY = y
-	        newTransition.useFadeTransition = transitionObj.useFadeTransition;
+    
+    // Check for collision with obj_RoomTransition
+    if (place_meeting(x, y, obj_RoomTransition)) {
+        var transitionObj = instance_place(x, y, obj_RoomTransition);
+        if (transitionObj.playSound != noone) {
+            audio_play_sound(transitionObj.playSound, 1, false);
+        }
+        if (transitionObj.useFadeTransition) {
+            // Spawn a new obj_Transition
+            var newTransition = instance_create_layer(x, y, "Instances", obj_Transition);
+            newTransition.targetRoom = transitionObj.targetRoom;
+            newTransition.targetX = transitionObj.targetX;
+            newTransition.targetY = transitionObj.targetY;
+            if (transitionObj.targetX != -1) global.targetX = transitionObj.targetX else global.targetX = x;
+            if (transitionObj.targetY != -1) global.targetY = transitionObj.targetY else global.targetY = y;
+            newTransition.useFadeTransition = transitionObj.useFadeTransition;
 
-	        // Lock the player
-	        global.playerState = PlayerStateLocked;
-	    } else {
-	        // Direct room transition without fade
-			if transitionObj.targetX != -1 global.targetX = transitionObj.targetX else global.targetX = x
-	        if transitionObj.targetY != -1 global.targetY = transitionObj.targetY else global.targetY = y
-	        room_goto(transitionObj.targetRoom);
-	    }
-	}
+            // Lock the player
+            global.playerState = PlayerStateLocked;
+        } else {
+            // Direct room transition without fade
+            if (transitionObj.targetX != -1) global.targetX = transitionObj.targetX else global.targetX = x;
+            if (transitionObj.targetY != -1) global.targetY = transitionObj.targetY else global.targetY = y;
+            room_goto(transitionObj.targetRoom);
+        }
+    }
     #endregion
 }
+
 
 function PlayerStateSpeak() {
     // Disable movement and switch to idle animation

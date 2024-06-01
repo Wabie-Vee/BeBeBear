@@ -5,11 +5,11 @@ function DialogueResponses(_responses){
 		//nothing happens / end text
 		case 0: break;	
 		
-		case 1: NewTextBox("You gave response A!"); break;
+		case 1: NewTextBox("You gave response A!", global.catty); break;
 		
-		case 2: NewTextBox("You gave response B! Any further response?",,["3:Yes!", "0:No."]); break;
+		case 2: NewTextBox("You gave response B! Any further response?",global.catty,["3:Yes!", "0:No."]); break;
 		
-		case 3: NewTextBox("/s/cRFUCK YOU..."); break;
+		case 3: NewTextBox("/s/cRFUCK YOU...",global.catty); break;
 		
 		default: break;
 	}
