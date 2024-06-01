@@ -1,24 +1,11 @@
 // Drawing the text box
 draw_sprite_stretched(spr_Textbox, background, x1, y1 + y1Target, x2 - x1, y2 - y1);
 var _print = string_copy(message, 1, textProgress);
+var _responsePrint = "";
 // Function to reset text color
 function ResetText(color) {
     draw_set_color(color);
     draw_set_font(global.fontMain);
-}
-
-if (responses[0] != -1) && (textProgress >= string_length(message)){
-	for (var i = 0; i < array_length(responses); i++){
-		_print += "\n"
-		if (i == responseSelected){
-			_print += " <";	
-		}
-		_print += responses[i];
-		
-		if (i == responseSelected){
-		_print += "> ";	
-		}
-	}
 }
 
 // Function to draw the text with effects
@@ -32,7 +19,7 @@ function DrawTextWithEffects(x, y, text, fontSize, maxWidth) {
     ds_map_add(color_map, "cP", c_purple);
     ds_map_add(color_map, "cW", c_white);
     ds_map_add(color_map, "cK", c_black);
-	ds_map_add(color_map, "cL", c_olive);
+    ds_map_add(color_map, "cL", c_olive);
 
     var default_color = c_white;
     var current_color = default_color;
@@ -62,7 +49,6 @@ function DrawTextWithEffects(x, y, text, fontSize, maxWidth) {
                 var marker = string_copy(word, j + 1, 2);
                 if (ds_map_exists(color_map, marker)) {
                     current_color = ds_map_find_value(color_map, marker);
-                    //draw_set_color(current_color); // Immediately set the color
                     j += 2; // Skip the next characters as they are part of the marker
                     continue;
                 } else if (next_char == "w") {
@@ -108,6 +94,22 @@ var _textBorder = 16;
 var _textBoxWidth = x2 - x1 - 16 - _textBorder;
 
 DrawTextWithEffects(x1 + _textBorder, y1 + _textBorder + y1Target, _print, _fontSize, _textBoxWidth);
+
+// Draw responses underneath the main text
+if (responses[0] != -1 && textProgress >= string_length(message)) {
+    var response_y = y1 + _textBorder + y1Target + _fontSize * 2; // Adjust vertical position as needed
+    for (var i = 0; i < array_length(responses); i++) {
+        if (i == responseSelected) {
+            draw_set_color(c_yellow); // Highlight the selected response
+            draw_text(x1 + _textBorder, response_y, "> " + responses[i] + " <");
+			draw_set_color(c_white);
+        } else {
+            draw_set_color(c_white);
+            draw_text(x1 + _textBorder, response_y, responses[i]);
+        }
+        response_y += _fontSize; // Move to the next line
+    }
+}
 
 // Drawing the portrait and name box if they exist
 if (portrait != undefined) {
