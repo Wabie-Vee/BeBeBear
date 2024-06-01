@@ -19,6 +19,11 @@ if (voiceTimer >= 4 && textProgress < _messageLength && voice != undefined) {
 if (keyboard_check_pressed(vk_space)) {
     var _messageLength = string_length(message);
     if (textProgress >= _messageLength) {
+		
+		if (responses[0] != -1){
+			with (originInstance) DialogueResponses(other.responseScripts[other.responseSelected]);
+		}
+		
         if (instance_exists(obj_TextQueued)) {
             with (obj_TextQueued) ticket--;
         } else {

@@ -1,11 +1,31 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function NewTextBox(_message, _voice, _portrait, _name){
+function NewTextBox(_message, _dialogueResponses, _voice, _portrait, _name){
 	var _obj;
 	if instance_exists(obj_Text) _obj = obj_TextQueued ; else _obj = obj_Text
 	with (instance_create_layer(0,0,"Instances", _obj))
 	{
 		message = _message;
+		if (instance_exists(other)) originInstance = other.id else originInstance = noone;
+		//if dialogue responses is not undefined
+		if _dialogueResponses != undefined {
+			responses = _dialogueResponses;	
+			
+			//trim markers from responses
+			for (var i = 0; i < array_length(responses); i++)
+			{
+				var _markerPosition = string_pos(":", responses[i]);
+				responseScripts[i] = string_copy(responses[i], 1, _markerPosition - 1);
+				responseScripts[i] = real(responseScripts[i]);
+				responses[i] = string_delete(responses[i], 1, _markerPosition);
+				breakpoint = 10;
+			}
+		} else {
+			responses = [-1];
+			responseScripts = [-1];
+		}
+		
+		//if voice sound is not defined
 		if _voice != undefined
 		{
 			voice = _voice
@@ -62,7 +82,7 @@ function NewTextBox(_message, _voice, _portrait, _name){
 	
 	with (obj_Player)
 	{
-		if (global.playerState != PlayerStateSpeak())
+		if (!instance_exists(obj_TextQueued))
 		{
 			lastState = global.playerState;
 			global.playerState = PlayerStateSpeak
