@@ -12,4 +12,10 @@ function InitNPCs(){
 	    portrait: spr_CattyPortrait,
 	    name: "Catty"
 	};
+	
+	global.bonnie = {
+		voice : snd_Speech2,
+		portrait : spr_BonniePortrait,
+		name : "Bonnie"
+	}
 }

@@ -97,7 +97,6 @@ DrawTextWithEffects(x1 + _textBorder, y1 + _textBorder + y1Target, _print, _font
 
 // Function to draw response options with effects
 function DrawResponsesWithEffects(x, y, responses, selectedIndex, fontSize) {
-    var response_y = y;
     var color_map = ds_map_create();
     ds_map_add(color_map, "cR", c_red);
     ds_map_add(color_map, "cG", c_green);
@@ -113,6 +112,9 @@ function DrawResponsesWithEffects(x, y, responses, selectedIndex, fontSize) {
     var current_color = default_color;
     var apply_wave = false;
     var apply_shake = false;
+
+    // Calculate starting Y position to draw responses from bottom to top
+    var response_y = y - fontSize * (array_length(responses) - 1);
 
     for (var i = 0; i < array_length(responses); i++) {
         var response = responses[i];
@@ -163,15 +165,15 @@ function DrawResponsesWithEffects(x, y, responses, selectedIndex, fontSize) {
             }
         }
 
-        response_y += fontSize; // Move to the next line
+        response_y += fontSize; // Move to the next line upwards
     }
 
     ds_map_destroy(color_map);
 }
 
 // Draw responses underneath the main text
-if (responses[0] != -1 && textProgress >= string_length(message)) {
-    var response_y = y1 + _textBorder + 8 + y1Target + _fontSize * 2; // Adjust vertical position as needed
+if (responses[0] != -1 && textProgress >= string_length(message)) { 
+    var response_y = y2 - _textBorder - y1Target- 8; // Adjust vertical position as needed
 	draw_set_halign(fa_right);
     DrawResponsesWithEffects(x1 + _textBorder + 6, response_y, responses, responseSelected, _fontSize);
 }

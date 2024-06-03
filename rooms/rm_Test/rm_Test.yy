@@ -13,6 +13,7 @@
     {"name":"inst_13CAA081","path":"rooms/rm_Test/rm_Test.yy",},
     {"name":"inst_52F51DC7","path":"rooms/rm_Test/rm_Test.yy",},
     {"name":"inst_303AD1FA","path":"rooms/rm_Test/rm_Test.yy",},
+    {"name":"inst_2571C3D4","path":"rooms/rm_Test/rm_Test.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -61,6 +62,10 @@
         {"$GMRInstance":"","%Name":"inst_303AD1FA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_303AD1FA","objectId":{"name":"obj_Catty","path":"objects/obj_Catty/obj_Catty.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},"propertyId":{"name":"entityActivateArgs","path":"objects/par_Entity/par_Entity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[\"Hi there... I'm /cYCATTY/cW... My mom put this bow on me so people know that I'm a girl...\", snd_Speech2 , spr_CattyPortrait, \"Catty\"]",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":320.0,"y":192.0,},
+        {"$GMRInstance":"","%Name":"inst_2571C3D4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2571C3D4","objectId":{"name":"obj_Bonnie","path":"objects/obj_Bonnie/obj_Bonnie.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},"propertyId":{"name":"entityActivateScript","path":"objects/par_Entity/par_Entity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"NewTextBox",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},"propertyId":{"name":"entityActivateArgs","path":"objects/par_Entity/par_Entity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[\"Hiiii\", global.bonnie, [\"0:Hi /cPBonnie!\"]]",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":192.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":22,"SerialiseWidth":30,"TileCompressedData":[
           -2,0,326,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,4,5,2,3,2,3,4,5,-2147483648,-2147483648,0,0,20,21,20,21,
