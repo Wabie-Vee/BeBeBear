@@ -100,10 +100,8 @@ function PlayerStateFree() {
 
     if (activate != noone && activate.entityActivateScript != -1) {
         drawPointer = true;
-        show_debug_message("Pointer Active: " + string(activate));
     } else {
         drawPointer = false;
-        show_debug_message("Pointer Inactive");
     }
     #endregion
 
@@ -111,7 +109,6 @@ function PlayerStateFree() {
     // Handle activation key logic
     if (keyActivate) {
         if (activate != noone && activate.entityActivateScript != -1) {
-            show_debug_message("Interacting with: " + string(activate));
 
             // Execute the activation script
             ScriptExecuteArray(activate.entityActivateScript, activate.entityActivateArgs);
@@ -127,7 +124,6 @@ function PlayerStateFree() {
                 playerState = PlayerStateSpeak; // Correct state transition
             }
         } else {
-            show_debug_message("No entity to interact with");
         }
     }
 
@@ -149,6 +145,7 @@ function PlayerStateFree() {
 
             // Lock the player
             global.playerState = PlayerStateLocked;
+			global.Direction = obj_Player.direction;
         } else {
             // Direct room transition without fade
             if (transitionObj.targetX != -1) global.targetX = transitionObj.targetX else global.targetX = x;
@@ -187,5 +184,6 @@ function PlayerStateSpeak() {
 }
 
 function PlayerStateLocked() {
+	    PlayerAnimateSprite();
     // Locked state does nothing
 }

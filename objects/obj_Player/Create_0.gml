@@ -1,4 +1,5 @@
 collisionMap = layer_tilemap_get_id(layer_get_id("Col"));
+direction = global.Direction;
 
 image_speed = 0;
 hSpeed = 0;
@@ -11,7 +12,6 @@ localFrame = 0;
 footStepSound = snd_FootStep2;
 footPlayed = false;
 step = false;
-direction = 240;
 drawPointer = false;
 
  

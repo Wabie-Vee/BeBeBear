@@ -55,10 +55,6 @@ function NewTextBox(_message, _character, _dialogueResponses) {
             responseScripts[0] = -1;
         }
 
-        // Debug messages to check responses and responseScripts
-        show_debug_message("NewTextBox - Responses: " + string(responses));
-        show_debug_message("NewTextBox - Response Scripts: " + string(responseScripts));
-
         // Check if voice sound is defined
         if (_voice != undefined) {
             voice = _voice;
