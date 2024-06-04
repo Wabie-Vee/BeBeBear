@@ -24,7 +24,7 @@ if (voiceTimer >= 4 && textProgress < _messageLength && voice != undefined) {
     if (audio_is_playing(voice)) {
         audio_stop_sound(voice);
     }
-    audio_sound_pitch(voice, random_range(0.8, 1));
+    audio_sound_pitch(voice, random_range(0.8, 1.2));
     audio_play_sound(voice, 1, false);
 }
 
