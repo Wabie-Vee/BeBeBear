@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Bonnie",
+  "%Name":"obj_Bobbin",
   "eventList":[],
   "managed":true,
-  "name":"obj_Bonnie",
+  "name":"obj_Bobbin",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_Entity","path":"objects/par_Entity/par_Entity.yy",},"propertyId":{"name":"entityNPC","path":"objects/par_Entity/par_Entity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
   ],

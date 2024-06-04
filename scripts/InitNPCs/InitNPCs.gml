@@ -13,9 +13,9 @@ function InitNPCs(){
 	    name: "Catty"
 	};
 	
-	global.bonnie = {
-		voice : snd_Bonnie,
+	global.bobbin = {
+		voice : snd_Bobbin,
 		portrait : spr_BonniePortrait,
-		name : "Bonnie"
+		name : "Bobbin"
 	}
 }

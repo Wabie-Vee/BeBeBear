@@ -40,7 +40,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"BeBeBear",
   "resources":[
@@ -50,7 +50,7 @@
     {"id":{"name":"fn_Tiny","path":"fonts/fn_Tiny/fn_Tiny.yy",},},
     {"id":{"name":"fn_Wabfont","path":"fonts/fn_Wabfont/fn_Wabfont.yy",},},
     {"id":{"name":"general notes2","path":"notes/general notes2/general notes2.yy",},},
-    {"id":{"name":"obj_Bonnie","path":"objects/obj_Bonnie/obj_Bonnie.yy",},},
+    {"id":{"name":"obj_Bobbin","path":"objects/obj_Bobbin/obj_Bobbin.yy",},},
     {"id":{"name":"obj_Camera","path":"objects/obj_Camera/obj_Camera.yy",},},
     {"id":{"name":"obj_Catty","path":"objects/obj_Catty/obj_Catty.yy",},},
     {"id":{"name":"obj_CoolDog","path":"objects/obj_CoolDog/obj_CoolDog.yy",},},
@@ -82,7 +82,7 @@
     {"id":{"name":"ScriptExecuteArray","path":"scripts/ScriptExecuteArray/ScriptExecuteArray.yy",},},
     {"id":{"name":"ScriptText","path":"scripts/ScriptText/ScriptText.yy",},},
     {"id":{"name":"Wave","path":"scripts/Wave/Wave.yy",},},
-    {"id":{"name":"snd_Bonnie","path":"sounds/snd_Bonnie/snd_Bonnie.yy",},},
+    {"id":{"name":"snd_Bobbin","path":"sounds/snd_Bobbin/snd_Bobbin.yy",},},
     {"id":{"name":"snd_CameraZoomIn","path":"sounds/snd_CameraZoomIn/snd_CameraZoomIn.yy",},},
     {"id":{"name":"snd_CameraZoomOut","path":"sounds/snd_CameraZoomOut/snd_CameraZoomOut.yy",},},
     {"id":{"name":"snd_CoolDog","path":"sounds/snd_CoolDog/snd_CoolDog.yy",},},

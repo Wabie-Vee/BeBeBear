@@ -29,7 +29,7 @@ if (voiceTimer >= 4 && textProgress < _messageLength && voice != undefined) {
 }
 
 // Kill textbox
-if (keyboard_check_pressed(vk_space)) {
+if (keyboard_check_pressed(vk_space)) or keyboard_check_pressed(ord("E")) {
     if (textProgress >= _messageLength) {
 		
 		if (responses[0] != -1){
