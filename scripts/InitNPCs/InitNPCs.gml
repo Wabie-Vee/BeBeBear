@@ -2,19 +2,19 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function InitNPCs(){
 	global.coolDog = {
-    voice: snd_Speech,
+    voice: snd_CoolDog,
     portrait: spr_CoolDogPortrait,
     name: "Cool Dog"
 	};
 
 	global.catty = {
-	    voice: snd_Speech2,
+	    voice: snd_RachelEh,
 	    portrait: spr_CattyPortrait,
 	    name: "Catty"
 	};
 	
 	global.bonnie = {
-		voice : snd_Speech2,
+		voice : snd_Bonnie,
 		portrait : spr_BonniePortrait,
 		name : "Bonnie"
 	}
