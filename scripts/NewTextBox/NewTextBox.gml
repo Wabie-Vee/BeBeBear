@@ -1,65 +1,76 @@
-function NewTextBox(_message, _character, _dialogueResponses) {
-    var _obj;
-    if (instance_exists(obj_Text)) {
-        _obj = obj_TextQueued;
-    } else {
-        _obj = obj_Text;
-    }
-	
-    // Extract character details from the struct
-	if _character != undefined{
-	    var _voice = _character.voice;
-	    var _portrait = _character.portrait;
-	    var _name = _character.name;
-	} else {
-		_voice = undefined
-		_portrait = undefined
-		_name = undefined
-	}
-	
-    with (instance_create_layer(0, 0, "Instances", _obj)) {
-        message = _message;
-        if (instance_exists(other)) {
-            originInstance = other.id;
+function NewTextBox(_character, _dialogueResponses, _message) {
+    // Function to create a textbox
+    var CreateTextBox = function(message, character, dialogueResponses, isLast) {
+        var obj;
+        if (instance_exists(obj_Text)) {
+            obj = obj_TextQueued;
         } else {
-            originInstance = noone;
+            obj = obj_Text;
         }
 
-        // Initialize responses and responseScripts as empty arrays
-        responses = [];
-        responseScripts = [];
+        var newTextBox = instance_create_layer(0, 0, "Instances", obj);
 
-        // Check if dialogue responses are defined and copy them
-        if (_dialogueResponses != undefined && array_length(_dialogueResponses) > 0) {
-            for (var i = 0; i < array_length(_dialogueResponses); i++) {
-                responses[i] = _dialogueResponses[i];
+        // Set the message immediately to ensure it is initialized
+        newTextBox.message = message;
+
+        with (newTextBox) {
+            if (instance_exists(other)) {
+                originInstance = other.id;
+            } else {
+                originInstance = noone;
             }
 
-            // Trim markers from responses and convert to real numbers
-            for (var i = 0; i < array_length(responses); i++) {
-                var _markerPosition = string_pos(":", responses[i]);
-                if (_markerPosition > 0) {
-                    var _scriptPart = string_copy(responses[i], 1, _markerPosition - 1);
-                    if (_scriptPart != "") {
-                        responseScripts[i] = real(_scriptPart);
-                    } else {
-                        responseScripts[i] = -1;
-                    }
-                    responses[i] = string_delete(responses[i], 1, _markerPosition);
-                } else {
-                    responseScripts[i] = -1; // Default value for invalid entries
-                }
-            }
-        } else {
+            // Initialize responses and responseScripts as empty arrays
+            responses = [];
+            responseScripts = [];
+
+            // Ensure responses and responseScripts arrays have at least one element
             responses[0] = -1;
             responseScripts[0] = -1;
-        }
 
-        // Check if voice sound is defined
-        if (_voice != undefined) {
-            voice = _voice;
-            if (_portrait != undefined) {
-                portrait = _portrait;
+            // Check if dialogue responses are defined and copy them (only for the last textbox)
+            if (isLast && dialogueResponses != undefined && array_length(dialogueResponses) > 0) {
+                for (var i = 0; i < array_length(dialogueResponses); i++) {
+                    responses[i] = dialogueResponses[i];
+                }
+
+                // Trim markers from responses and convert to real numbers
+                for (var i = 0; i < array_length(responses); i++) {
+                    var markerPosition = string_pos(":", responses[i]);
+                    if (markerPosition > 0) {
+                        var scriptPart = string_copy(responses[i], 1, markerPosition - 1);
+                        if (scriptPart != "") {
+                            responseScripts[i] = real(scriptPart);
+                        } else {
+                            responseScripts[i] = -1;
+                        }
+                        responses[i] = string_delete(responses[i], 1, markerPosition);
+                    } else {
+                        responseScripts[i] = -1; // Default value for invalid entries
+                    }
+                }
+            }
+
+            // Extract character details from the struct
+            if (character != undefined) {
+                voice = character.voice;
+                portrait = character.portrait;
+                nameTag = character.name;
+            } else {
+                voice = undefined;
+                portrait = undefined;
+                nameTag = undefined;
+            }
+
+            // Set voice and portrait properties
+            if (voice != undefined) {
+                voice = voice;
+            } else {
+                voice = global.voice;
+            }
+
+            if (portrait != undefined) {
+                portrait = portrait;
                 portraitSpeed = 10;
                 portraitLength = sprite_get_number(portrait);
                 portraitFrame = 0;
@@ -77,11 +88,11 @@ function NewTextBox(_message, _character, _dialogueResponses) {
                 ny2 = 352;
 
                 // Check if a name is specified
-                if (_name == undefined) {
+                if (nameTag == undefined) {
                     py2 = 352;
                     nameTag = undefined;
                 } else {
-                    nameTag = _name;
+                    nameTag = nameTag;
                 }
             } else {
                 portrait = undefined;
@@ -90,26 +101,29 @@ function NewTextBox(_message, _character, _dialogueResponses) {
                 y1 = 224;
                 y2 = 352;
             }
-        } else {
-            voice = global.voice;
-            portrait = undefined;
-            x1 = 0;
-            x2 = RESOLUTION_W * GUI_MULTIPLIER;
-            y1 = 224;
-            y2 = 352;
+
+            if (instance_exists(obj_TextQueued)) {
+                y1Target = 0;
+            } else {
+                y1Target = 352 - 224;
+            }
         }
 
-        if (instance_exists(obj_TextQueued)) {
-            y1Target = 0;
-        } else {
-            y1Target = 352 - 224;
+        with (obj_Player) {
+            if (!instance_exists(obj_TextQueued)) {
+                lastState = global.playerState;
+                global.playerState = PlayerStateSpeak;
+            }
         }
-    }
+    };
 
-    with (obj_Player) {
-        if (!instance_exists(obj_TextQueued)) {
-            lastState = global.playerState;
-            global.playerState = PlayerStateSpeak;
-        }
+    // Create the first textbox
+    CreateTextBox(_message, _character, _dialogueResponses, argument_count == 3);
+
+    // Create additional textboxes if provided
+    for (var i = 3; i < argument_count; i++) {
+        var isLast = (i == argument_count - 1);
+        var additionalMessage = argument[i];
+        CreateTextBox(additionalMessage, _character, _dialogueResponses, isLast);
     }
 }
