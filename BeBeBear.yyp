@@ -85,6 +85,7 @@
     {"id":{"name":"snd_Bobbin","path":"sounds/snd_Bobbin/snd_Bobbin.yy",},},
     {"id":{"name":"snd_CameraZoomIn","path":"sounds/snd_CameraZoomIn/snd_CameraZoomIn.yy",},},
     {"id":{"name":"snd_CameraZoomOut","path":"sounds/snd_CameraZoomOut/snd_CameraZoomOut.yy",},},
+    {"id":{"name":"snd_Catty","path":"sounds/snd_Catty/snd_Catty.yy",},},
     {"id":{"name":"snd_CoolDog","path":"sounds/snd_CoolDog/snd_CoolDog.yy",},},
     {"id":{"name":"snd_DoorOpen","path":"sounds/snd_DoorOpen/snd_DoorOpen.yy",},},
     {"id":{"name":"snd_FootStep","path":"sounds/snd_FootStep/snd_FootStep.yy",},},

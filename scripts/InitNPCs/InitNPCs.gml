@@ -8,7 +8,7 @@ function InitNPCs(){
 	};
 
 	global.catty = {
-	    voice: snd_RachelEh,
+	    voice: snd_Catty,
 	    portrait: spr_CattyPortrait,
 	    name: "Catty"
 	};
