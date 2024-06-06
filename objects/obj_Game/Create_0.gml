@@ -3,7 +3,7 @@ InitNPCs();
 global.Direction = 270;
 global.gamePaused = false;
 global.textSpeed = 0.75;
-global.BGM = snd_HereComesBebe;
+global.BGM = snd_MenuTheme;
 global.voice = snd_Speech2;
 global.fontMain = fn_Wabfont;
 global.fontTiny = fn_Tiny

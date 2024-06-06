@@ -17,7 +17,7 @@ draw_sprite_ext(spr_MainMenu, image_index, xTo, yTo  - waveY - 128, 1, 1, waveRo
 logoAlpha += .5;
 
 //draw menu sprite
-draw_sprite_ext(sprite_index, image_index, xTo, yTo, width/sprite_width, height/sprite_height, 0, c_white, 1)
+draw_sprite_ext(sprite_index, image_index, xTo, yTo, round(width/sprite_width), round(height/sprite_height), 0, c_white, 1)
 
 //draw menu text
 draw_set_valign(fa_top);

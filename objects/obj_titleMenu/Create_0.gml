@@ -4,7 +4,7 @@ height = 104;
 xTo = (RESOLUTION_W/2);
 yTo = (RESOLUTION_H/3*2);
 pos = 0;
-opBorder = 8;
+opBorder = 16;
 opSpace = 16;
 
 option[0, 0] = "Start Game";
