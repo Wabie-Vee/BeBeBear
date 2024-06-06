@@ -11,6 +11,8 @@ global.fontBig = fn_Big
 global.zoomDefault = .75;
 global.fullScreen = false;
 global.playerState = PlayerStateFree;
+skyX = 0
+
 
 
 

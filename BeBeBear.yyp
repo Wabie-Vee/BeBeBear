@@ -119,6 +119,7 @@
     {"id":{"name":"spr_grass","path":"sprites/spr_grass/spr_grass.yy",},},
     {"id":{"name":"spr_MainMenu","path":"sprites/spr_MainMenu/spr_MainMenu.yy",},},
     {"id":{"name":"spr_Menubox","path":"sprites/spr_Menubox/spr_Menubox.yy",},},
+    {"id":{"name":"spr_NightSky","path":"sprites/spr_NightSky/spr_NightSky.yy",},},
     {"id":{"name":"spr_PlayerShadow","path":"sprites/spr_PlayerShadow/spr_PlayerShadow.yy",},},
     {"id":{"name":"spr_RoomFloor","path":"sprites/spr_RoomFloor/spr_RoomFloor.yy",},},
     {"id":{"name":"spr_RoomTransition","path":"sprites/spr_RoomTransition/spr_RoomTransition.yy",},},
