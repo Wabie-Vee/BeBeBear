@@ -1,7 +1,7 @@
 depth = 2000;
 
 var _skyWidth = sprite_get_width(spr_NightSky);
-skyX -= .2;
+skyX -= .3;
 if skyX <= -_skyWidth skyX = 0;
 
 //draw the first sky

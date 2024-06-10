@@ -18,4 +18,9 @@ function InitNPCs(){
 		portrait : spr_BonniePortrait,
 		name : "Bobbin"
 	}
+	
+	global.normal = {
+	voice : snd_Speech,
+	portrait : noone
+	}
 }

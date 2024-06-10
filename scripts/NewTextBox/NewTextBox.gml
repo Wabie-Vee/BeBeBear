@@ -54,8 +54,13 @@ function NewTextBox(_character, _dialogueResponses, _message) {
             // Extract character details from the struct
             if (character != undefined) {
                 voice = character.voice;
+				if character.portrait !=noone{
                 portrait = character.portrait;
                 nameTag = character.name;
+				} else {
+					portrait = undefined;
+					nameTag = undefined;
+				}
             } else {
                 voice = undefined;
                 portrait = undefined;
